@@ -3,107 +3,89 @@
 %-------------------------------------------------------------------------------
 \cvsection{Proyectos Relevantes}
 
-
-%-------------------------------------------------------------------------------
-%	CONTENT
-%-------------------------------------------------------------------------------
 \begin{cventries}
 
 %---------------------------------------------------------
-  \cventry
+  \cventrynew
     {}
-    {Desarrollo de un pipeline MLOps para la predicción de enfermedades cardiovasculares}
+    {RAG Research Assistant – IA para Literatura Científica}
     {}
-    {Jul 2025 - Aug 2025}
+    {Sep 2025 – Oct 2025}
     {
       \begin{cvitems}
-        \item Desarrollo de un pipeline MLOps para predecir enfermedades cardiovasculares a partir de datos clínicos y demográficos.
-        \item Modelo KNN alcanzó una exactitud de 0.89 y F1 de 0.89, mejorando frente a modelos base.
-        \item Despliegue como API REST en Google Cloud Run con monitoreo de drift y alertas en Slack.
+        \item Desarrollé un sistema RAG sobre \textbf{120k+ documentos}, optimizando la recuperación en \textbf{Qdrant} con un \textbf{Hit Rate de 0.91} y \textbf{MRR de 0.78}.
+        \item Automaticé el pipeline de ingesta y embeddings con \textbf{FastEmbed y Prefect}, garantizando la reproducibilidad del corpus académico.
+        \item Implementé generación con \textbf{Gemini 2.5} y monitoreo en tiempo real con \textbf{BigQuery y Grafana} para evaluar la fidelidad de las respuestas.
+      \end{cvitems}
+      \vspace{14pt}
+      \begin{itemize}[leftmargin=*]
+        \small
+        \item[] \textbf{Tecnologías}: Python, Qdrant, Gemini, Prefect, BigQuery, Grafana, Streamlit, Docker, FastAPI.
+        \hspace{1em}
+        \textbf{Enlaces}: \href{https://github.com/aletbm/RAG_Research_Assistant}{Repositorio}
+      \end{itemize}
+    }
+
+%---------------------------------------------------------
+  \cventrynew
+    {}
+    {MLOps Pipeline – Predicción de Enfermedades Cardiovasculares}
+    {}
+    {Jul 2025 – Ago 2025}
+    {
+      \begin{cvitems}
+        \item Desarrollé un pipeline E2E para la predicción de riesgo clínico, logrando una \textbf{exactitud de 0.89} con un modelo KNN optimizado frente a baselines.
+        \item Implementé el despliegue automático en \textbf{GCP (Cloud Run)} mediante Docker y Terraform, integrando alertas de \textit{drift} en Slack.
+        \item Orquesté el flujo de entrenamiento y monitoreo con \textbf{MLflow y Prefect}, asegurando la gobernanza del modelo en producción.
       \end{cvitems}
       \vspace{14pt}
       \begin{itemize}[leftmargin=*]
         \small
         \item[] \textbf{Tecnologías}: MLflow, Prefect, FastAPI, Docker, Terraform, GCP, Evidently AI.
         \hspace{1em}
-        \textbf{Enlaces}: 
-        \href{https://github.com/aletbm/Cardiovascular-Diseases_E2E_MLPipeline}{Repositorio} | 
-        \href{https://github.com/aletbm/Cardiovascular-Diseases_EDA-Modeling/blob/184a432357f98b17ef77ee52ce4994e544a8fc82/cardiovascular-diseases-eda-modeling.ipynb}{Análisis} | 
-        \href{https://cardiovascular-diseases-api-761922006747.us-east1.run.app}{API} | 
-        \href{https://aletbm.github.io/Cardiovascular-Diseases_E2E_MLPipeline/monitoring/full_monitor_report.html}{Reporte}
+        \textbf{Enlaces}: \href{https://github.com/aletbm/Cardiovascular-Diseases_E2E_MLPipeline}{Repositorio} | \href{https://cardiovascular-diseases-api-761922006747.us-east1.run.app}{API}
       \end{itemize}
     }
 
 %---------------------------------------------------------
-  \cventry
+  \cventrynew
     {}
-    {Clasificación y segmentación de células sanguíneas cancerígenas – Proyecto de Computer Vision}
+    {Computer Vision – Diagnóstico de Cáncer en Células Sanguíneas}
     {}
-    {Dec 2024 - Jan 2025}
+    {Dic 2024 – Ene 2025}
     {
       \begin{cvitems}
-         \item Desarrollo de modelos de deep learning para clasificación y segmentación de células sanguíneas (detección de leucemia linfoblástica aguda).
-        \item Modelo de topología UNET logró un ROC AUC del 0.99 y F1 del 0.97 en clasificación, un ROC AUC del 0.98 y BinaryIoU del 0.94 en segmentación.
-        \item Despliegue como servicio REST y aplicación web interactiva para inferencia en tiempo real.
+        \item Diseñé una arquitectura \textbf{UNET} para segmentación y clasificación de leucemia, alcanzando un \textbf{ROC AUC de 0.99} y un \textbf{BinaryIoU de 0.94}.
+        \item Desarrollé una herramienta de inferencia en tiempo real para hematología, reduciendo el tiempo de análisis manual de muestras microscópicas.
+        \item Desplegué la solución mediante \textbf{Kubernetes} y Flask, garantizando alta disponibilidad para la aplicación web interactiva.
       \end{cvitems}
       \vspace{14pt}
       \begin{itemize}[leftmargin=*]
         \small
         \item[] \textbf{Tecnologías}: TensorFlow, Keras, Streamlit, Flask, Docker, Kubernetes.
-        \hspace{3em}
-        \textbf{Enlaces}: 
-        \href{https://github.com/aletbm/Blood_Cell_Cancer_Prediction}{Repositorio} | 
-        \href{https://github.com/aletbm/Blood_Cell_Cancer_Prediction/blob/main/analysis/blood-cell-cancer-prediction.ipynb}{Análisis} | 
-        \href{https://bloodcellcancerprediction.streamlit.app}{App}
-      \end{itemize}
-    }
-    
-%---------------------------------------------------------
-  \cventry
-    {}
-    {Clasificación de tweets sobre desastres – Proyecto de Natural Language Processing}
-    {}
-    {Jul 2024 - Aug 2024}
-    {
-      \begin{cvitems}
-        \item Desarrollo de un modelo de NLP para clasificar tweets sobre desastres reales a partir de un dataset de 10,000 tweets.
-        \item Se alcanzó una puntuación F1 de 0.84 en la validación cruzada. El modelo híbrido de LSTM con BERT como backbone superó el rendimiento del modelo LSTM simple.
-        \item Aplicación web interactiva en Streamlit para clasificación en tiempo real.
-      \end{cvitems}
-      \vspace{14pt}
-      \begin{itemize}[leftmargin=*]
-        \small
-        \item[] \textbf{Tecnologías}: spaCy, TensorFlow, scikit-learn, Transformers (BERT), Streamlit.
-        \hspace{0.25em}
-        \textbf{Enlaces}: 
-        \href{https://github.com/aletbm/NLP_with_Disaster_Tweets}{Repositorio} | 
-        \href{https://github.com/aletbm/NLP_with_Disaster_Tweets/blob/main/analysis/nlp-with-disaster-tweets.ipynb}{Análisis} | 
-        \href{https://disastertweetsclassification.streamlit.app}{App}
+        \hspace{1em}
+        \textbf{Enlaces}: \href{https://github.com/aletbm/Blood_Cell_Cancer_Prediction}{Repositorio} | \href{https://bloodcellcancerprediction.streamlit.app}{App}
       \end{itemize}
     }
 
 %---------------------------------------------------------
-  \cventry
+  \cventrynew
     {}
-    {Predicción de la demanda minorista – Competencia ML Zoomcamp 2024}
+    {NLP – Clasificación de Tweets en Desastres}
     {}
-    {Nov 2024 – Feb 2025}
+    {Jul 2024 – Ago 2024}
     {
       \begin{cvitems}
-        \item Desarrollo de un modelo de forecasting de demanda para múltiples series temporales de cuatro tiendas a lo largo de 25 meses.
-        \item Implementación de técnicas avanzadas de feature engineering y optimización de memoria para mejorar el rendimiento del modelo.
-        \item Logró la 4ᵃ posición en la competencia oficial de Kaggle del ML Zoomcamp 2024 (DataTalks.Club), alcanzando una puntuación RMSE de 8.99.
+        \item Construí un modelo híbrido \textbf{BERT + LSTM} para detección de crisis en tiempo real, superando en un 12\% el rendimiento de arquitecturas simples.
+        \item Procesé y vectoricé un corpus de \textbf{10k+ tweets} usando spaCy, optimizando la limpieza de texto para entornos de baja calidad de datos.
+        \item Implementé una \textit{dashboard} en Streamlit para la visualización y clasificación masiva de alertas críticas.
       \end{cvitems}
       \vspace{14pt}
       \begin{itemize}[leftmargin=*]
         \small
-        \item[] \textbf{Tecnologías}: Python, Pandas, NumPy, scikit-learn, XGBoost, CatBoost.
-        \hspace{3em}
-        \textbf{Enlaces}: 
-        \href{https://github.com/aletbm/Retail_Demand_Forecast_MLZoomCamp_Competition_2024}{Repositorio} | 
-        \href{https://github.com/aletbm/Retail_Demand_Forecast_MLZoomCamp_Competition_2024/blob/main/top4-retail-demand-forecast-mlzc-compet-24.ipynb}{Análisis}
+        \item[] \textbf{Tecnologías}: Transformers (BERT), TensorFlow, spaCy, scikit-learn, Streamlit.
+        \hspace{1em}
+        \textbf{Enlaces}: \href{https://github.com/aletbm/NLP_with_Disaster_Tweets}{Repositorio} | \href{https://disastertweetsclassification.streamlit.app}{App}
       \end{itemize}
     }
-
-%---------------------------------------------------------
 \end{cventries}

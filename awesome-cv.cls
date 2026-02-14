@@ -620,7 +620,7 @@
   \ifblank{#5}{%
     % Sin descripción - espacio reducido
     \ifblank{#1}{%
-      \ifblank{#3}{\vspace{2.0mm}}{\vspace{2mm}}%
+      \ifblank{#3}{\vspace{2mm}}{\vspace{2mm}}%
     }{%
       \vspace{1mm}%
     }%
@@ -632,6 +632,26 @@
       \vspace{1mm}%
     }%
   }%
+}
+
+\newcommand{\cventrynew}[5]{%
+  \vspace{-3mm}% <--- Aumentamos el número negativo para "subir" más la card
+  \setlength\tabcolsep{0pt}%
+  \setlength{\extrarowheight}{0pt}%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}%
+    \ifblank{#2}{%
+      \ifblank{#3}{%
+        \entrypositionstyle{#1} & \entrydatestyle{#4} \\
+      }{}%
+    }{%
+      \entrytitlestyle{#2} & \ifblank{#3}{\entrydatestyle{#4}}{\entrylocationstyle{#3}} \\
+      \ifblank{#1}{}{%
+        \entrypositionstyle{#1} & \ifblank{#3}{}{\entrydatestyle{#4}} \\
+      }%
+    }%
+    \ifblank{#5}{}{\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}%
+  \end{tabular*}\par%
+  \vspace{-2.5mm}% <--- Agregamos un vspace negativo al final para eliminar el salto de línea automático del par
 }
 
 % Define an environment for cvsubentry

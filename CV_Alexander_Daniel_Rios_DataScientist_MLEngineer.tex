@@ -31,16 +31,25 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
+\definecolor{darkblue}{HTML}{005985} % Un azul marino profundo y elegante
+\colorlet{awesome}{darkblue}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
 
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
+% --- CONFIGURACIÓN MODO OSCURO ---
+\usepackage{pagecolor} % Necesitas instalar este paquete si no está
+\definecolor{darkbg}{HTML}{1E1E1E} % Fondo oscuro
+\definecolor{lighttext}{HTML}{F0F0F0} % Texto casi blanco
+
+%\pagecolor{darkbg} % Cambia el color de la página
+%\color{lighttext}  % Cambia el color del texto base
+
+% Redefinir colores de la plantilla para que contrasten
+%\definecolor{darktext}{HTML}{D0D0D0}
+%\definecolor{text}{HTML}{D0D0D0}
+%\definecolor{graytext}{HTML}{B0B0B0}
+%\definecolor{lighttext}{HTML}{808080}
+% ---------------------------------
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
