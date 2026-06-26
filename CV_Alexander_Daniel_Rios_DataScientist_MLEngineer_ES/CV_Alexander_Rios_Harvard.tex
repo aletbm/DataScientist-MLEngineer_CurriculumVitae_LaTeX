@@ -1,0 +1,236 @@
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+% ─────────────────────────────────────────────────────────────
+%  CV estilo Harvard — Alexander Daniel Rios
+% ─────────────────────────────────────────────────────────────
+\documentclass[9pt]{extarticle}
+
+% ── Paquetes ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in, top=0.6in, bottom=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{parskip}
+
+% ── Colores ──────────────────────────────────────────────────
+\definecolor{linkcolor}{HTML}{003366}
+
+% ── Hyperref ─────────────────────────────────────────────────
+\hypersetup{colorlinks=true, urlcolor=linkcolor, linkcolor=linkcolor,
+  pdfauthor={Alexander Daniel Rios}, pdftitle={CV — Alexander Daniel Rios}}
+
+% ── Espaciado base ───────────────────────────────────────────
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ── Encabezado de sección ────────────────────────────────────
+\newcommand{\cvsection}[1]{%
+  \vspace{6pt}%
+  {\small\bfseries\uppercase{#1}}%
+  \vspace{2pt}\hrule height 0.5pt\vspace{5pt}%
+}
+
+% ── Entrada de proyecto: {Título}{Fecha}{bullets}{tech}{links}
+\newcommand{\project}[5]{%
+  \textbf{#1} \hfill \textit{\small #2}\\[-14pt]
+  \begin{itemize}[leftmargin=1.2em, itemsep=0pt, topsep=2pt, parsep=0pt]
+    #3
+  \end{itemize}
+  \vspace{1pt}
+  {\small\textbf{Tecnologías:} #4 \quad \textbf{Enlaces:} #5}
+  \vspace{5pt}%
+}
+
+\newcommand{\lastproject}[5]{%
+  \textbf{#1} \hfill \textit{\small #2}\\[-14pt]
+  \begin{itemize}[leftmargin=1.2em, itemsep=0pt, topsep=2pt, parsep=0pt]
+    #3
+  \end{itemize}
+  \vspace{1pt}
+  {\small\textbf{Tecnologías:} #4 \quad \textbf{Enlaces:} #5}%
+}
+
+% ── Entrada de educación: {Inst}{Título}{Loc}{Fecha}{desc}
+\newcommand{\eduentry}[5]{%
+  \textbf{#2}, \textit{#1} \hfill \textit{\small #4}\\
+  \ifx&#3&\else{\small #3}\\[-8pt]\fi
+}
+
+\newcommand{\lasteduentry}[4]{%
+  \textbf{#2}, \textit{#1} \hfill \textit{\small #4}\\
+  \ifx&#3&\else{\small #3}\\[1pt]\fi
+  \vspace{-14pt}
+}
+
+\newcommand{\addentry}[5]{%
+  \textbf{#2}, \textit{#1} \hfill \textit{\small #4}\\
+  \ifx&#3&\else{\small #3}\\[1pt]\fi
+  \ifx&#5&\else{\small #5\\[-8pt]}\fi
+}
+
+\newcommand{\lastaddentry}[5]{%
+  \textbf{#2}, \textit{#1} \hfill \textit{\small #4}\\
+  \ifx&#3&\else{\small #3}\\[1pt]\fi
+  \ifx&#5&\else{\small #5\\[-14pt]}\fi
+}
+
+% ── Entrada de publicación: {Título}{Medio}{Año} ─────────────
+\newcommand{\pubentry}[3]{%
+  \textbf{#1} — {\small\textit{#2}} \hfill \textit{\small #3}\\[-10pt]
+}
+
+\newcommand{\lastpubentry}[3]{%
+  \textbf{#1} — {\small\textit{#2}} \hfill \textit{\small #3}\\[-14pt]
+}
+
+% ─────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── ENCABEZADO ───────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Alexander Daniel Rios}\\[4pt]
+  {\small
+    Científico de Datos \(\cdot\) Ingeniero de Machine Learning\\[3pt]
+    Buenos Aires, Argentina
+    \(\mid\) \href{mailto:alexanderdaniel_rios@hotmail.com}{alexanderdaniel\_rios@hotmail.com}
+    \(\mid\) +54 9 11 5773-4409\\[2pt]
+    \href{https://github.com/aletbm}{github.com/aletbm}
+    \(\mid\) \href{https://www.linkedin.com/in/alexander-daniel-rios}{linkedin.com/in/alexander-daniel-rios}
+    \(\mid\) \href{https://www.linktr.ee/aletbm}{linktr.ee/aletbm}
+  }
+\end{center}
+
+\vspace{2pt}
+
+% ── PERFIL PROFESIONAL ───────────────────────────────────────
+\cvsection{Perfil Profesional}
+
+Científico de Datos e Ingeniero de ML con más de 4 años de experiencia en proyectos de alto
+impacto. Especializado en el ciclo de vida completo de modelos de ML, desde la concepción
+hasta producción, utilizando arquitecturas MLOps (MLflow, GCP, Docker). Experto en la
+aplicación de Deep Learning para PLN y Visión por Computadora para resolver problemas complejos
+del mundo real.
+
+% ── PROYECTOS RELEVANTES ─────────────────────────────────────
+\cvsection{Proyectos Relevantes}
+
+\project
+  {Asistente de Investigación RAG – IA para Literatura Científica}
+  {Sep 2025 – Oct 2025}
+  {
+    \item Construí un sistema RAG sobre \textbf{más de 120k documentos}, optimizando la recuperación en \textbf{Qdrant} con \textbf{Hit Rate 0,91} y \textbf{MRR 0,78}.
+    \item Automaticé el pipeline de ingestión y embeddings con \textbf{FastEmbed y Prefect}, garantizando reproducibilidad del corpus.
+    \item Integré generación con \textbf{Gemini 2.5} y monitoreo en tiempo real vía \textbf{BigQuery y Grafana}.
+  }
+  {Python, Qdrant, Gemini, Prefect, BigQuery, Grafana, Streamlit, Docker, FastAPI}
+  {\href{https://github.com/aletbm/RAG_Research_Assistant}{Repositorio}}
+
+\project
+  {Pipeline MLOps – Predicción de Enfermedades Cardiovasculares}
+  {Jul 2025 – Ago 2025}
+  {
+    \item Construí un pipeline E2E de predicción de riesgo clínico logrando \textbf{accuracy 0,89} con un modelo KNN optimizado.
+    \item Desplegué automáticamente en \textbf{GCP Cloud Run} vía Docker y Terraform, con alertas de \textit{drift} por Slack.
+    \item Orquesté entrenamiento y monitoreo con \textbf{MLflow y Prefect} para la gobernanza del modelo en producción.
+  }
+  {MLflow, Prefect, FastAPI, Docker, Terraform, GCP, Evidently AI}
+  {\href{https://github.com/aletbm/Cardiovascular-Diseases_E2E_MLPipeline}{Repositorio} \(\mid\) \href{https://cardiovascular-diseases-api-761922006747.us-east1.run.app}{API}}
+
+\project
+  {Visión por Computadora – Diagnóstico de Cáncer en Células Sanguíneas}
+  {Dic 2024 – Ene 2025}
+  {
+    \item Diseñé una arquitectura \textbf{UNET} para segmentación y clasificación de leucemia: \textbf{ROC AUC 0,99}, \textbf{BinaryIoU 0,94}.
+    \item Desarrollé una herramienta de inferencia en tiempo real para hematología, reduciendo el tiempo de análisis manual de muestras microscópicas.
+    \item Desplegué con \textbf{Kubernetes} y Flask para acceso web interactivo de alta disponibilidad.
+  }
+  {TensorFlow, Keras, Streamlit, Flask, Docker, Kubernetes}
+  {\href{https://github.com/aletbm/Blood_Cell_Cancer_Prediction}{Repositorio} \(\mid\) \href{https://bloodcellcancerprediction.streamlit.app}{App}}
+
+\lastproject
+  {PLN – Clasificación de Tweets sobre Desastres}
+  {Jul 2024 – Ago 2024}
+  {
+    \item Construí un modelo híbrido \textbf{BERT + LSTM} para detección de crisis en tiempo real, superando las líneas base en un \textbf{12\%}.
+    \item Procesé y vectoricé \textbf{más de 10k tweets} con spaCy, optimizando la limpieza de texto para entornos de datos ruidosos.
+    \item Implementé un dashboard en Streamlit para visualización masiva y clasificación de alertas críticas.
+  }
+  {Transformers (BERT), TensorFlow, spaCy, scikit-learn, Streamlit}
+  {\href{https://github.com/aletbm/NLP_with_Disaster_Tweets}{Repositorio} \(\mid\) \href{https://disastertweetsclassification.streamlit.app}{App}}
+
+% ── EDUCACIÓN ────────────────────────────────────────────────
+\cvsection{Educación}
+
+\eduentry
+  {UTN — Universidad Tecnológica Nacional}
+  {Ingeniería Electrónica}
+  {Buenos Aires, Argentina}
+  {Abr 2014 – Actualidad (Egreso previsto 2026)}
+  {}
+
+\lasteduentry
+  {UTN — Universidad Tecnológica Nacional}
+  {Técnico Universitario en Electrónica}
+  {Buenos Aires, Argentina}
+  {Abr 2014 – Mar 2018}
+
+% ── FORMACIÓN COMPLEMENTARIA ─────────────────────────────────
+\cvsection{Formación Complementaria}
+
+\addentry
+  {DataTalks.Club}
+  {\href{https://drive.google.com/file/d/1T1NxRtjeb5xgFjWrEk9oTdtdPcqPQH2f/view?usp=sharing}{Machine Learning Zoomcamp}}
+  {}
+  {Sep 2024 – Ene 2025}
+  {Ingeniería de ML end-to-end: modelado con Scikit-Learn/TensorFlow, despliegue con Docker, Kubernetes y serverless.}
+
+\addentry
+  {DataTalks.Club}
+  {\href{https://drive.google.com/file/d/1f6o5BkSsiKrAkRrmSggAwh3WxUNkDD7v/view?usp=sharing}{Machine Learning Operations Zoomcamp}}
+  {}
+  {May 2025 – Ago 2025}
+  {MLOps: seguimiento de experimentos (MLflow), orquestación de pipelines, monitoreo (Evidently AI), IaC en GCP con Terraform.}
+
+\lastaddentry
+  {Hugging Face}
+  {\href{https://drive.google.com/file/d/1Dl4U_Ee6CsA35Ysqwebf-Jcxu8C6e_KK/view?usp=sharing}{Agentes de IA}}
+  {}
+  {May 2025 – Jun 2025}
+  {Diseño e implementación de agentes de IA con LangGraph y LlamaIndex.}
+
+% ── ARTÍCULOS Y PUBLICACIONES ────────────────────────────────
+\cvsection{Artículos y Publicaciones}
+
+\pubentry
+  {\href{https://www.linkedin.com/pulse/computer-vision-para-el-diagn\%C3\%B3stico-de-tumores-cerebrales-rios}{Visión por Computadora para el Diagnóstico de Tumores Cerebrales}}
+  {LinkedIn}
+  {2023}
+
+\pubentry
+  {\href{https://datatalks.club/blog/how-to-build-blood-cell-classifier-for-cancer-prediction-case-study-from-ml-zoomcamp.html}{Cómo Construir un Clasificador de Células Sanguíneas para Predicción de Cáncer}}
+  {Blog de DataTalks.Club}
+  {2025}
+
+\lastpubentry
+  {\href{https://volcano-camp-325.notion.site/Natural-Language-Processing-using-spaCy-TensorFlow-and-BERT-model-architecture-2455067176b38018b7defdca1005c07a}{Procesamiento de Lenguaje Natural con spaCy, TensorFlow y Arquitectura BERT}}
+  {Notion}
+  {2025}
+
+% ── IDIOMAS ──────────────────────────────────────────────────
+\cvsection{Idiomas}
+
+\begin{tabular}{@{}ll}
+  \textbf{Español} & Nativo \\[2pt]
+  \textbf{Inglés}  & B1 Intermedio — \href{https://links.t-educationfirst.mkt4686.com/servlet/MailView?ms=NTY0Mzg4NzcS1&r=LTgzODk5MTE0NzkS1&j=MjI1NjA1NTI4NQS2&mt=1&rt=0}{Certificado EF SET} \\
+\end{tabular}
+
+\vspace{8pt}
+\begin{center}
+  \small\textcolor{gray}{Última actualización: \today}
+\end{center}
+
+\end{document}
